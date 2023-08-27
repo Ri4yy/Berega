@@ -1,0 +1,29 @@
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+@import url('swiper.css');
+@import url('tailwindElements.css');
+
+html,
+body {
+    scrollbar-gutter: stable;
+    /* overflow-x: hidden; */
+}
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.16);
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #FF8336;
+}
+
+[data-te-nav-active] svg {
+    fill: white;
+}
+
+[data-te-nav-active] span {
+    color: white;
+    font-weight: 700;
+}
