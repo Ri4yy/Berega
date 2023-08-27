@@ -24,14 +24,41 @@
                             </div>
                         </div>
                         <div class="flex items-center min-[800px]:justify-end justify-between shrink-0">
-                            <div class="rounded-full bg-[#F2F2F2] py-2 px-3 w-fit xs:mr-10">
-                                <button>
+                            <div class="counterArea rounded-full bg-[#F2F2F2] py-2 px-3 w-fit xs:mr-10">
+                                <button class="minusBtn">
                                     <svg width="12" height="12" viewBox="0 0 12 12" class="fill-black" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10.1981 5.55469H2.14852C2.09933 5.55469 2.05908 5.59687 2.05908 5.64844V6.35156C2.05908 6.40312 2.09933 6.44531 2.14852 6.44531H10.1981C10.2473 6.44531 10.2875 6.40312 10.2875 6.35156V5.64844C10.2875 5.59687 10.2473 5.55469 10.1981 5.55469Z" />
                                     </svg>
                                 </button>
-                                <input type="text" class="text-center w-[40px] outline-none bg-transparent" value="1">
-                                <button>
+                                <input type="text" class="text-center w-[40px] outline-none bg-transparent" maxlength="99" value="1">
+                                <button class="plusBtn">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.49034 1.78125H6.16128C6.22092 1.78125 6.25074 1.8125 6.25074 1.875V10.125C6.25074 10.1875 6.22092 10.2188 6.16128 10.2188H5.49034C5.4307 10.2188 5.40088 10.1875 5.40088 10.125V1.875C5.40088 1.8125 5.4307 1.78125 5.49034 1.78125Z" fill="black"/>
+                                        <path d="M2.06918 5.55469H9.58211C9.64173 5.55469 9.67155 5.58594 9.67155 5.64844V6.35156C9.67155 6.41406 9.64173 6.44531 9.58211 6.44531H2.06918C2.00955 6.44531 1.97974 6.41406 1.97974 6.35156V5.64844C1.97974 5.58594 2.00955 5.55469 2.06918 5.55469Z" fill="black"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="text-lg font-semibold lg:mr-2 xs:mr-10">1300 ₽</span>
+                            <button class="text-white bg-mainOrange rounded-full py-3 px-6 text-sm font-semibold hover-button shrink-0 max-xs:hidden">Удалить</button>
+                        </div>
+                    </div>
+                    <div class="flex max-lg:flex-col lg:justify-between xs:gap-2 gap-5 lg:items-center rounded-[20px] bg-white py-5 xl:px-10 px-5">
+                        <div class="flex items-center xs:gap-8 gap-5 grow">
+                            <img src="../src/assets/img/photo/cart.png" class="max-w-[85px] max-h-[90px] object-contain" alt="">
+                            <div class="flex flex-col">
+                                <p class="font-semibold leading-[1.1]">Сегмент краба Стригуна </p>
+                                <span class="text-xs mt-2.5">200 г</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center min-[800px]:justify-end justify-between shrink-0">
+                            <div class="counterArea rounded-full bg-[#F2F2F2] py-2 px-3 w-fit xs:mr-10">
+                                <button class="minusBtn">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" class="fill-black" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.1981 5.55469H2.14852C2.09933 5.55469 2.05908 5.59687 2.05908 5.64844V6.35156C2.05908 6.40312 2.09933 6.44531 2.14852 6.44531H10.1981C10.2473 6.44531 10.2875 6.40312 10.2875 6.35156V5.64844C10.2875 5.59687 10.2473 5.55469 10.1981 5.55469Z" />
+                                    </svg>
+                                </button>
+                                <input type="text" class="text-center w-[40px] outline-none bg-transparent" maxlength="99" value="1">
+                                <button class="plusBtn">
                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5.49034 1.78125H6.16128C6.22092 1.78125 6.25074 1.8125 6.25074 1.875V10.125C6.25074 10.1875 6.22092 10.2188 6.16128 10.2188H5.49034C5.4307 10.2188 5.40088 10.1875 5.40088 10.125V1.875C5.40088 1.8125 5.4307 1.78125 5.49034 1.78125Z" fill="black"/>
                                         <path d="M2.06918 5.55469H9.58211C9.64173 5.55469 9.67155 5.58594 9.67155 5.64844V6.35156C9.67155 6.41406 9.64173 6.44531 9.58211 6.44531H2.06918C2.00955 6.44531 1.97974 6.41406 1.97974 6.35156V5.64844C1.97974 5.58594 2.00955 5.55469 2.06918 5.55469Z" fill="black"/>
@@ -78,11 +105,11 @@
     </main>
 
     <!-- Библиотеки -->
-    <script src="./src/assets/libs/jquery.js"></script>
-    <script src="./src/assets/libs/swiper.js"></script>
-    <script src="./src/assets/libs/tailwindElements.js"></script>
+    <script src="../src/assets/libs/jquery.js"></script>
+    <script src="../src/assets/libs/swiper.js"></script>
+    <script src="../src/assets/libs/tailwindElements.js"></script>
     <!-- Скрипты -->
-    <script src="./src/assets/js/custom.js"></script>
-    <script src="./src/assets/js/slider.js"></script>
+    <script src="../src/assets/js/custom.js"></script>
+    <script src="../src/assets/js/slider.js"></script>
 </body>
 </html>

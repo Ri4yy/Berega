@@ -27,3 +27,60 @@ body {
     color: white;
     font-weight: 700;
 }
+
+
+input[type="radio"]:checked, 
+input[type="radio"]:not(:checked) 
+{
+    display: none;
+}
+
+input[type="radio"]:checked + label, 
+input[type="radio"]:not(:checked) + label {
+    display: inline-block;
+    position: relative;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label:before, 
+input[type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #FF8336;
+    background-color: #ffffff;
+}
+
+input[type="radio"]:checked + label:before, 
+input[type="radio"]:not(:checked) + label:before {
+    border-radius: 100%;
+}
+
+input[type="radio"]:checked + label:after, 
+input[type="radio"]:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    transition: all 0.2s ease;
+}
+
+input[type="radio"]:checked + label:after, 
+input[type="radio"]:not(:checked) + label:after {
+    right: 5px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: #FF8336;
+}
+
+input[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+}
+
+input[type="radio"]:checked + label:after {
+    opacity: 1;
+}
