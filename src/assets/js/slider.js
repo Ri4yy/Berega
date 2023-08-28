@@ -1,10 +1,14 @@
 const swiperMain = new Swiper('.swiperMain', {
     // Optional parameters
-    autoplay: false,
+    autoplay: true,
+    autoplay: {
+      delay: 6000,
+    },
   
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
+      clickable: true,
     },
 });
 

@@ -19,6 +19,11 @@ body {
     background-color: #FF8336;
 }
 
+.swiper-pagination {
+    position: relative;
+    bottom: 0 !important;
+}
+
 [data-te-nav-active] svg {
     fill: white;
 }
@@ -28,23 +33,34 @@ body {
     font-weight: 700;
 }
 
+.header_fixed {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    backdrop-filter: blur(4px); 
+    background: rgba(236,242,248,0.4) !important;
+    padding: 0 !important;
+}
 
-input[type="radio"]:checked, 
-input[type="radio"]:not(:checked) 
+
+.addressProfile:checked, 
+.addressProfile:not(:checked) 
 {
     display: none;
 }
 
-input[type="radio"]:checked + label, 
-input[type="radio"]:not(:checked) + label {
+.addressProfile:checked + label, 
+.addressProfile:not(:checked) + label {
     display: inline-block;
     position: relative;
     line-height: 20px;
     cursor: pointer;
 }
 
-input[type="radio"]:checked + label:before, 
-input[type="radio"]:not(:checked) + label:before {
+.addressProfile:checked + label:before, 
+.addressProfile:not(:checked) + label:before {
     content: "";
     position: absolute;
     right: 0px;
@@ -55,20 +71,20 @@ input[type="radio"]:not(:checked) + label:before {
     background-color: #ffffff;
 }
 
-input[type="radio"]:checked + label:before, 
-input[type="radio"]:not(:checked) + label:before {
+.addressProfile:checked + label:before, 
+.addressProfile:not(:checked) + label:before {
     border-radius: 100%;
 }
 
-input[type="radio"]:checked + label:after, 
-input[type="radio"]:not(:checked) + label:after {
+.addressProfile:checked + label:after, 
+.addressProfile:not(:checked) + label:after {
     content: "";
     position: absolute;
     transition: all 0.2s ease;
 }
 
-input[type="radio"]:checked + label:after, 
-input[type="radio"]:not(:checked) + label:after {
+.addressProfile:checked + label:after, 
+.addressProfile:not(:checked) + label:after {
     right: 5px;
     top: 5px;
     width: 12px;
@@ -77,10 +93,10 @@ input[type="radio"]:not(:checked) + label:after {
     background-color: #FF8336;
 }
 
-input[type="radio"]:not(:checked) + label:after {
+.addressProfile:not(:checked) + label:after {
     opacity: 0;
 }
 
-input[type="radio"]:checked + label:after {
+.addressProfile:checked + label:after {
     opacity: 1;
 }
