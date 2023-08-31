@@ -48,49 +48,6 @@ $(function() {
     });
 });
 
-// Обратный отсчет
-function counter(area) {
-    var timer2 = "1:30";
-    var interval = setInterval(function() {
-    var timer = timer2.split(':');
-    var minutes = parseInt(timer[0], 10);
-    var seconds = parseInt(timer[1], 10);
-    --seconds;
-    minutes = (seconds < 0) ? --minutes : minutes;
-    if (minutes < 0) clearInterval(interval);
-    seconds = (seconds < 0) ? 59 : seconds;
-    seconds = (seconds < 10) ? '0' + seconds : seconds;
-    $(area).html(minutes + ':' + seconds);
-    timer2 = minutes + ':' + seconds;
-    }, 1000);
-}
-
-// Форма авторизации
-$('.nextStepAuth').click((e) => {
-    let val = $(e.target).parents().find('.phoneValue').val();
-    if(val.length > 11) {
-        console.log('В номере больше 11 символов')
-        $('.formAuth').toggleClass('hidden')
-        $('.formEnterCode').toggleClass('hidden')
-        counter('.countdownCode')
-
-        $('.confirmElse').click((e) => {
-            if($(e.target).data('confirm') == 'code') {
-
-                counter($(e.target).parent().find('.countdownCode'))
-                $('.formEnterCode').toggleClass('hidden');
-                $('.formEnterDecimal').toggleClass('hidden');
-            } else if($(e.target).data('confirm') == 'decimal') {
-
-                counter($(e.target).parent().find('.countdownDecimal'))
-                $('.formEnterCode').toggleClass('hidden')
-                $('.formEnterDecimal').toggleClass('hidden')
-            }
-        }); 
-    } else {
-        console.log('В номере меньше 11 символов')
-    }
-});
 
 // Форма регистрации
 $('.nextStepReg').click((e) => {
@@ -99,19 +56,17 @@ $('.nextStepReg').click((e) => {
         console.log('В номере больше 11 символов')
         $('.formReg').toggleClass('hidden')
         $('.formEnterCode').toggleClass('hidden')
-        counter('.countdownCode')
+        $('.changePhoneStep').toggleClass('hidden')
 
         $('.confirmElse').click((e) => {
-            if($(e.target).data('confirm') == 'code') {
-
-                counter($(e.target).parent().find('.countdownCode'))
-                $('.formEnterCode').toggleClass('hidden');
-                $('.formEnterDecimal').toggleClass('hidden');
-            } else if($(e.target).data('confirm') == 'decimal') {
-
-                counter($(e.target).parent().find('.countdownDecimal'))
-                $('.formEnterCode').toggleClass('hidden')
-                $('.formEnterDecimal').toggleClass('hidden')
+            if ($(e.target).data('confirm') == 'code') {
+                console.log('111111')
+                $('.formEnterCode').addClass('hidden')
+                $('.formEnterDecimal').removeClass('hidden')
+            } else if ($(e.target).data('confirm') == 'decimal') {
+                console.log('222222')
+                $('.formEnterCode').removeClass('hidden');
+                $('.formEnterDecimal').addClass('hidden');
             }
         }); 
     } else {
@@ -130,3 +85,107 @@ $('.radio-input').click((e) => {
         $('.deliveryBtn').removeClass('hidden')
     }
 }); 
+
+
+$('.nextStepAuth').click((e) => {
+    let val = $(e.target).parents().find('.phoneValue').val();
+    if (val.length > 11) {
+        console.log('В номере больше 11 символов')
+        $('.formAuth').toggleClass('hidden')
+        $('.formEnterCode').toggleClass('hidden')
+        $('.changePhoneStep').toggleClass('hidden')
+
+
+        $('.confirmElse').click((e) => {
+            if ($(e.target).data('confirm') == 'code') {
+                console.log('111111')
+                $('.formEnterCode').addClass('hidden')
+                $('.formEnterDecimal').removeClass('hidden')
+            } else if ($(e.target).data('confirm') == 'decimal') {
+                console.log('222222')
+                $('.formEnterCode').removeClass('hidden');
+                $('.formEnterDecimal').addClass('hidden');
+            }
+        });
+    } else {
+        console.log('В номере меньше 11 символов')
+    }
+});
+
+$('.changePhoneStep').click(() => {
+    $('.formAuth').toggleClass('hidden')
+    $('.formReg').toggleClass('hidden')
+    $('.changePhoneStep').toggleClass('hidden')
+    $('.formEnterCode').addClass('hidden');
+    $('.formEnterDecimal').addClass('hidden');
+    $('.phoneValue').val('');
+    clearInterval(countdown)
+})
+
+let minuteCode = $('.minuteCode'),
+    secondCode = $('.secondCode'),
+    minuteDigits = $('.minuteDigits'),
+    secondDigits = $('.secondDigits');
+
+var phoneValue = $('.phoneValue');
+
+let startPhoneTimer = $('.startPhoneTimer'),
+    startCodeTimer = $('.startCodeTimer');
+
+let minutes, seconds;
+
+startPhoneTimer.on('click', (e) => {
+    clearInterval(countdown)
+    resetTimer(minuteDigits, secondDigits)
+    startTime(minuteDigits, secondDigits);
+    $('.inputConfirm').each((i, item) => {
+        $(item).val('')
+    })
+});
+
+startCodeTimer.each((t, timer) => {
+    $(timer).on('click', (e) => {
+        if(phoneValue.val().length > 11) {
+            console.log('proverka')
+            clearInterval(countdown)
+            resetTimer(minuteCode, secondCode)
+            startTime(minuteCode, secondCode);
+            $('.inputConfirm').each((i, item) => {
+                $(item).val('')
+            })
+        }
+    });
+})
+
+function resetTimer(clockM, clockS) {
+    clearInterval(countdown);
+    minutes = '0' + 0;
+    seconds = 10;
+    clockM.html(minutes);
+    clockS.html(seconds);
+}
+
+function startTime(clockM, clockS) {
+    countdown = setInterval(() => {
+        clockM.html(minutes);
+
+        if (seconds < 10) {
+            clockS.html('0' + seconds);
+        } else {
+            clockS.html(seconds);
+        }
+
+        console.log(minutes + ":" + seconds);
+        if (seconds < 1 && minutes > 0) {
+            minutes--;
+            seconds = 59;
+        } else if (minutes == '00' && seconds === 0) {
+            clearInterval(countdown);
+            console.log('Время вышло');
+            console.log(clockM.parent().parent().find('confirmElse'));
+        }
+        seconds--;
+    }, 1000);
+}
+
+var countdown;

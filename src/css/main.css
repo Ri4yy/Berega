@@ -693,6 +693,10 @@ video {
   top: 70px;
 }
 
+.left-\[35px\] {
+  left: 35px;
+}
+
 .-z-10 {
   z-index: -10;
 }
@@ -810,10 +814,6 @@ video {
 
 .block {
   display: block;
-}
-
-.inline-block {
-  display: inline-block;
 }
 
 .flex {
