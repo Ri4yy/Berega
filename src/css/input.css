@@ -18,3 +18,7 @@ footer {
 .hover-button {
     @apply hover:bg-[#da814a] active:bg-[#ffa167] transition-colors duration-300
 }
+
+.section-title {
+    @apply text-[#264462] xs:text-[32px] text-xl text-center leading-[1.1]
+}

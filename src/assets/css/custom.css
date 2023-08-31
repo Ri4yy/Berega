@@ -1,11 +1,12 @@
-@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+@import url('fonts.css');
 @import url('swiper.css');
 @import url('tailwindElements.css');
 
 html,
 body {
-    scrollbar-gutter: stable;
+    /* scrollbar-gutter: stable; */
     /* overflow-x: hidden; */
+    font-family: 'Open Sans', sans-serif;
 }
 .swiper-pagination-bullet {
     width: 14px;

@@ -20,8 +20,8 @@
 </head>
 
 <body class="bg-lightBlue">
-    <section class="mt-10">
-        <p class="text-[#264462] xs:text-[32px] text-xl text-center">ОФОРМЛЕНИЕ <span class="text-mainOrange font-bold">ЗАКАЗА</span></p>
+    <section class="xs:mt-[60px] mt-[30px] xs:mb-[100px] mb-[50px]">
+        <p class="section-title montserrat-medium">ОФОРМЛЕНИЕ <span class="text-mainOrange font-bold">ЗАКАЗА</span></p>
         <div class="flex flex-col min-[900px]:max-w-[900px] xs:max-w-[600px] max-xs:w-[90%] w-full mx-auto mt-10 bg-white rounded-[20px] xs:pt-10 pt-5 xs:pb-[30px] pb-5 xs:px-[30px] px-5 relative">
             <a href="cart.html" class="absolute xs:top-2 left-2 min-[600px]:top-[30px] top-[210px] min-[600px]:left-[30px]">
                 <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,14 +48,16 @@
                             <div class="flex gap-4">
                                 <div class="max-xs:w-1/2">
                                     <input class="peer sr-only radio-input" type="radio" name="delivery" id="pickup" checked>
-                                    <label class=" form-input flex justify-center items-center xs:min-w-[140px] xs:min-h-[180px] min-h-[120px] rounded-[15px] shadow-[0px_0px_2px_2px_#D7D7D7] cursor-pointer peer-checked:shadow-[0px_0px_2px_2px_#FF8336]" for="pickup">
+                                    <label class="flex-col form-input flex justify-between xs:justify-center items-center xs:min-w-[140px] xs:min-h-[180px] min-h-[140px] rounded-[15px] shadow-[0px_0px_2px_2px_#D7D7D7] cursor-pointer peer-checked:shadow-[0px_0px_2px_2px_#FF8336]" for="pickup">
                                         <img src="../src/assets/img/photo/pickup.png" alt="">
+                                        <span class="text-sm font-medium mt-3">Самовывоз</span>
                                     </label>
                                 </div>
                                 <div class="max-xs:w-1/2">
                                     <input class="peer sr-only radio-input" type="radio" name="delivery" id="delivery">
-                                    <label class=" form-input flex justify-center items-center xs:min-w-[140px] xs:min-h-[180px] min-h-[120px] rounded-[15px] shadow-[0px_0px_2px_2px_#D7D7D7] cursor-pointer peer-checked:shadow-[0px_0px_2px_2px_#FF8336]" for="delivery">
+                                    <label class="flex-col form-input flex justify-between xs:justify-center items-center xs:min-w-[140px] xs:min-h-[180px] min-h-[140px] rounded-[15px] shadow-[0px_0px_2px_2px_#D7D7D7] cursor-pointer peer-checked:shadow-[0px_0px_2px_2px_#FF8336]" for="delivery">
                                         <img src="../src/assets/img/photo/delivery.png" alt="">
+                                        <span class="text-sm font-medium mt-3">Доставка</span>
                                     </label>
                                 </div>
                             </div>
