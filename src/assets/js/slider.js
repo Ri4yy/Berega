@@ -49,7 +49,15 @@ $(function () {
           rows: 4,
           fill: "row",
         }
-      }
+      },
+      1921: {
+        allowTouchMove: true,
+        slidesPerView: 5,
+        grid: {
+          rows: 4,
+          fill: "row",
+        }
+      },
     },
     
     pagination: {
