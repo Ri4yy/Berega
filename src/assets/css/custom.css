@@ -40,9 +40,8 @@ body {
     top: 0;
     z-index: 50;
     width: 100%;
-    backdrop-filter: blur(4px); 
+    backdrop-filter: blur(20px); 
     background: rgba(236,242,248,0.4) !important;
-    padding: 0 !important;
 }
 
 
